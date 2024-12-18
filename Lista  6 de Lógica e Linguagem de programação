@@ -1,0 +1,360 @@
+Questão - 1
+
+/*Agnaldo pagou 30% de uma dívida de R$ 900,00 e 
+dividiu o restante em 5 parcelas iguais.
+Qual é o valor que Agnaldo vai pagar 
+em cada parcela?*/
+
+#include <stdio.h>
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	float Pcntg,Divida, qntd_parcelas, valor_parcela, desconto;
+	
+	printf("Insira o valor da porcentagem paga da dívida de Agnaldo\n");
+	scanf("%f",&Pcntg);
+	printf("Insira o valor da dívida de Agnaldo\n");
+	scanf("%f",&Divida);
+	printf("Insira o valor da quantidade de parcelas da dívida de Agnaldo depois dele ter pago parte.\n");
+	scanf("%f",&qntd_parcelas);
+	
+	desconto=Divida*Pcntg/100;
+	
+	valor_parcela=(Divida - desconto)/qntd_parcelas;
+	
+	printf("O valor a ser pago em cada parcela é R$%f",valor_parcela);
+	return 0;
+}
+
+Questão - 2
+/*Sabe-se que o lucro de uma empresa foi dividido entre os dois sócios
+ de forma proporcional. O sócio cujo investimento inicial foi de 2/5, 
+recebeu R$ 5000. Quanto o outro recebeu? Qual foi o lucro da empresa?
+*/
+
+#include <stdio.h>
+
+int main (){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	int N1, D1, N2;
+	float Valor_socio1, Valor_socio2, Lucro_total;
+	
+	printf("Insira o numerador do valor do investimento do primeiro sócio:\n");
+	scanf("%i",&N1);
+	printf("Insira o denominador do valor do investimento do primeiro sócio:\n");
+	scanf("%i",&D1);
+	printf("Insira o valor recebido do investimento do primeiro sócio:\n");
+	scanf("%f",&Valor_socio1);
+	
+	N2= D1-N1;
+	
+	Lucro_total= (Valor_socio1/N1)*D1;
+	
+	Valor_socio2=N2*(Valor_socio1/N1);
+	
+	printf("O valor do Lucro adquirido pela empresa é de: R$%f\n", Lucro_total);
+	
+	printf("O valor adquirido pelo segundo sócio é de: R$%f", Valor_socio2);
+	
+	return 0;
+}
+
+
+
+Questão - 3
+/*Duas empreiteiras farão conjuntamente a pavimentação de uma estrada, cada uma
+trabalhando a partir de uma das extremidades. Se uma delas pavimentar 2/5 da 
+estrada e a outra os 81 km restantes, qual a extensão dessa estrada ?
+*/
+
+#include <stdio.h>
+
+int main (){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	int N1, D1, N2;
+	float Metragem, Metragem2;
+	
+	printf("Insira o numerador do valor da área pavimentada da primeira empreiteira:\n");
+	scanf("%i",&N1);
+	printf("Insira o denominador do valor da área pavimentada da primeira empreiteira:\n");
+	scanf("%i",&D1);
+	printf("Insira o valor da área pavimentada pela segunda empreiteira:\n");
+	scanf("%f",&Metragem2);
+	
+	N2= D1-N1;
+	
+	Metragem= (Metragem2/N2)*D1;
+	
+	printf("A metragem da estrada pavimentada pelas empresas é de: R$%f\n", Metragem);
+	
+	return 0;
+}
+
+
+
+Questão - 4
+/*Dados a distância em km, o preço da gasolina em reais, e a autonomia do carro por 
+litro (autonomia é quantidade de quilômetros que o carro faz por litro), 
+deve-se mostrar quantos litros de gasolina um carro irá consumir e 
+quanto será gasto em reais.
+*/
+
+#include <stdio.h>
+
+int main (){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	float Litros, Km_Litros_gastos, Km, Preco_gas, Litros_gastos, valor_gasto;
+	
+	printf("Insira a quantidade de quilômetros:\n");
+	scanf("%f",&Km);
+	printf("Insira o preço do Litro da gasolina:\n");
+	scanf("%f",&Preco_gas);
+	printf("Insira o valor da quantidade de quilômetros por litro do carro a ser rodado:\n");
+	scanf("%f",&Km_Litros_gastos);
+	
+	Litros_gastos= Km/Km_Litros_gastos;
+
+	valor_gasto=Preco_gas*Litros_gastos;	
+	
+	printf("A quantidade de Litros gastos é de: R$%f e o valor pago por essa gasolina é de: R$%f", Litros_gastos, valor_gasto);
+	
+	return 0;
+}
+
+
+
+Questão - 5
+/*Dado um valor inteiro positivo que representa um montante de segundos, converter e
+mostrar os segundos para o formato hh:mm:ss.
+*/
+
+#include <stdio.h>
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	int Num, Horas, Minutos, Segundos;
+	
+	printf("Insira o valor a ser analisado:\n");
+	scanf("%i",& Num);
+	
+	Horas=Num/3600;
+	Minutos= (Num-(Horas*3600))/60;
+	Segundos= Num-(Horas*3600)-Minutos*60;
+	
+	printf("São %i Horas, %i minutos e %i segundos\n",Horas, Minutos, Segundos);
+	
+	printf("%i/%i/%i",Horas, Minutos, Segundos);
+	
+	return 0;
+}
+
+
+
+Questão - 6
+/*Um foguete é lançado formando com o solo um ângulo a. Depois de percorrer x metros
+em linha reta determine a altura que o foguete se encontra.
+*/
+
+#include <stdio.h>
+
+#include <math.h>
+
+#define pi 3.1419
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	float multiplicacao, sen,A, D;
+		
+	printf("Informe o ângulo atual do foguete ");
+		
+	scanf("%f",&A);
+		
+	printf("Informe a distância percorrida pelo foguete ");
+		
+	scanf("%f",&D);
+		
+	sen =sin(A*pi/180);
+		
+	multiplicacao=sen*D;
+	     
+	printf("A altura alcançada pelo foguete com ângulo de %0.2f graus é de: %0.2f",A, multiplicacao);
+
+	
+	return 0;
+}
+
+
+
+Questão - 7
+
+/*Dados o comprimento dos lados de um triângulo equilátero determinar sua altura.
+*/
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	float L, multiplicacao, divisao, raiz;
+		
+	printf("Informe o valor do lado do Triângulo:\n");
+		
+	scanf("%f", &L);
+		
+	raiz=sqrt(3);
+		
+	multiplicacao=L*raiz;
+		
+	divisao=multiplicacao/2;
+		
+	printf("A altura do triângulo escolhido é: %0.2f", divisao);
+
+	
+	return 0;
+}
+
+Questão - 8
+/*Após fazer 80 arremessos à cesta, Marcelinho constatou que acertou 70% deles. 
+Após fazer mais 20 arremessos, ele melhorou seu percentual de acertos para 71% 
+do total de arremessos. 
+Dos últimos 20 arremessos, quantos arremessos Marcelinho errou?
+*/
+
+#include <stdio.h>
+
+#include <math.h>
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	int qntd_arremesso1, qntd_arremesso2, qntd_arremesso_acertados2, Total_arrem, qntd_arremesso_falho2;
+	
+	float Porcentagem_arrem1, Porcentagem_arrem2, total_acerto1, total_acerto2;
+		
+	printf("Informe a primeira quantidade de arremessos:\n");
+		
+	scanf("%i", &qntd_arremesso1);
+	
+	printf("Informe a primeira porcentagem de acertos:\n");
+		
+	scanf("%f", &Porcentagem_arrem1);
+	
+	printf("Informe a segunda quantidade de arremessos:\n");
+		
+	scanf("%i", &qntd_arremesso2);
+	
+	printf("Informe a segunda porcentagem de acertos:\n");
+		
+	scanf("%f", &Porcentagem_arrem2);
+		
+	Total_arrem= qntd_arremesso1+qntd_arremesso2;
+	
+	total_acerto2=(Total_arrem*Porcentagem_arrem2)/100;
+	
+	total_acerto1=(qntd_arremesso1*Porcentagem_arrem1)/100;
+	
+	qntd_arremesso_acertados2= total_acerto2-total_acerto1;
+	
+	qntd_arremesso_falho2=qntd_arremesso2-qntd_arremesso_acertados2;
+		
+	printf("Dentre as últimas %i tentativas, a quantidade de arremessos MAL sucedidos é de: %i",qntd_arremesso2,qntd_arremesso_falho2);
+
+	
+	return 0;
+}
+
+
+
+Questão - 9
+/*Certa empresa selecionou 150 candidatos para uma entrevista, visando o preenchimento
+de algumas vagas. Dos candidatos selecionados, 10% não compareceram à entrevista, e
+20% dos que compareceram foram contratados. Qual o percentual de candidatos
+contratados em relação ao total selecionado?
+*/
+
+#include <stdio.h>
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+
+float Porc_nao_foram, Porc_contra, Percentual, N_total_cand, N_nao_foram, N_contra;	
+
+printf("Insira o total de candidatos selecionados:\n");
+scanf("%f",&N_total_cand);
+
+printf("Insira o percentual de candidatos selecionados que não foram para a entrevista:\n");
+scanf("%f",&Porc_nao_foram);
+
+printf("Insira o percentual de candidatos selecionados que foram para a entrevista e foram contratados:\n");
+scanf("%f",&Porc_contra);
+
+N_nao_foram= (N_total_cand*Porc_nao_foram)/100;
+
+N_contra= ((N_total_cand-N_nao_foram)*Porc_contra)/100;
+
+Percentual= (N_contra/N_total_cand)*100;
+
+printf("O percentual da quantidade de candidatos contratados em relação á quantidade total de selecionados é de: %0.1f por cento!!",Percentual);
+
+return 0;
+}
+
+
+
+Questão - 10
+/*Para um churrasco promovido por uma empresa, serão comprados exatamente 60 kg 
+entre filé e linguiça, gastando no máximo R$ 1.590,00. Se o quilograma de filé 
+custa R$ 30,00 e o quilograma da linguiça R$ 24,00, 
+quantos quilogramas de filé poderão ser comprados ?
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+
+float Peso_carne, Preco_maximo, Preco_file, Preco_lingui, Peso_max_file,resultado1,resultado2;	
+
+setlocale(LC_ALL, "");
+
+printf("Insira o peso total de carne:\n");
+scanf("%f",&Peso_carne);
+
+printf("Insira o preço máximo que pode alcançar:\n");
+scanf("%f",&Preco_maximo);
+
+printf("Insira o preço do Filé:\n");
+scanf("%f",&Preco_file);
+
+printf("Insira o preço da Linguiça:\n");
+scanf("%f",&Preco_lingui);
+
+
+resultado1 = Preco_maximo - ( Peso_carne * Preco_lingui);
+resultado2 = resultado1 / (Preco_file - Preco_lingui); 
+  
+    Peso_max_file = Preco_maximo-(Peso_carne*Preco_lingui)/(Preco_file-Preco_lingui);
+    
+printf("A quantidade de peso de Filé alcançada com orçamento máximo é %.2f kg!\n",resultado2);
+
+return 0;
+}
