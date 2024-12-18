@@ -1,0 +1,27 @@
+/*Agnaldo pagou 30% de uma dívida de R$ 900,00 e 
+dividiu o restante em 5 parcelas iguais.
+Qual é o valor que Agnaldo vai pagar 
+em cada parcela?*/
+
+#include <stdio.h>
+
+int main(){
+	
+	//Feito por Gabriel de Santana Alves para a matéria de LELP
+	
+	float Pcntg,Divida, qntd_parcelas, valor_parcela, desconto;
+	
+	printf("Insira o valor da porcentagem paga da dívida de Agnaldo\n");
+	scanf("%f",&Pcntg);
+	printf("Insira o valor da dívida de Agnaldo\n");
+	scanf("%f",&Divida);
+	printf("Insira o valor da quantidade de parcelas da dívida de Agnaldo depois dele ter pago parte.\n");
+	scanf("%f",&qntd_parcelas);
+	
+	desconto=Divida*Pcntg/100;
+	
+	valor_parcela=(Divida - desconto)/qntd_parcelas;
+	
+	printf("O valor a ser pago em cada parcela é R$%f",valor_parcela);
+	return 0;
+}
